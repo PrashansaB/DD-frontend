@@ -8,7 +8,7 @@ function Home() {
   const [foodCat, setFoodCat] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
   let loadData = async () => {
-    let resp = await fetch("http://localhost:5000/api/foodData", {
+    let resp = await fetch("https://dd-erca.onrender.com/api/foodData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

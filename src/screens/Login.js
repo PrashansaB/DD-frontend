@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 export const Login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
-  const URL = "http://localhost:5000/api/loginuser";
+  const URL = "https://dd-erca.onrender.com/api/loginuser";
   const handleSubmit = async (e) => {
     const { email, password } = credentials;
     e.preventDefault();
