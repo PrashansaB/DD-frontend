@@ -8,7 +8,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     const { email, password } = credentials;
     e.preventDefault();
-    console.log("submit clicked successfully");
+
     const response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -17,7 +17,6 @@ export const Login = () => {
       body: JSON.stringify({ password: password, email: email }),
     });
     const json = await response.json();
-    console.log(json);
 
     if (!json.success) {
       alert("Enter Valid Credentials");
@@ -25,7 +24,7 @@ export const Login = () => {
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
       localStorage.setItem("userEmail", email);
-      console.log(localStorage.getItem("authToken", "userEmail"));
+
       navigate("/");
     }
   };

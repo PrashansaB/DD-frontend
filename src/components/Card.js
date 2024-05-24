@@ -30,7 +30,6 @@ export const Card = (props) => {
         });
         return;
       } else if (food.size !== size) {
-        console.log(food.size, size, "this is 35th......");
         await dispatch({
           type: "ADD",
           id: foodItem.id,

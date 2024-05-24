@@ -17,7 +17,6 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    console.log(data, localStorage.getItem("userEmail"), new Date());
     let response = await fetch("https://dd-erca.onrender.com/api/orderData", {
       method: "POST",
       headers: {
@@ -29,7 +28,6 @@ export default function Cart() {
         order_date: new Date().toDateString(),
       }),
     });
-    console.log("JSON RESPONSE:::::", response.status);
     if (response.status === 200) {
       dispatch({ type: "DROP" });
     }
@@ -38,7 +36,6 @@ export default function Cart() {
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
     <div>
-      {console.log(data)}
       <div className="container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md">
         <table className="table table-hover ">
           <thead className=" text-info bg-dark fs-4">

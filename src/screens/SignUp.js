@@ -12,7 +12,6 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     const { name, email, password, geolocation } = credentials;
     e.preventDefault();
-    console.log("submit clicked successfully");
     const response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -26,7 +25,6 @@ const SignUp = () => {
       }),
     });
     const json = await response.json();
-    console.log(json);
 
     if (!json.success) {
       alert("Enter Valid Credentials");

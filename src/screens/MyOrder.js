@@ -6,7 +6,6 @@ export default function MyOrder() {
   const [orderData, setOrderData] = useState({});
 
   const fetchMyOrder = async () => {
-    console.log(localStorage.getItem("userEmail"));
     await fetch("https://dd-erca.onrender.com/api/myOrderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
@@ -21,10 +20,6 @@ export default function MyOrder() {
       let response = await res.json();
       await setOrderData(response);
     });
-
-    // await res.map((data)=>{
-    //    console.log(data)
-    // })
   };
 
   useEffect(() => {
